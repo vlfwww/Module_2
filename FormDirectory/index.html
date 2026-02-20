@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <section class="form-wrapper">
+      <form action="#" method="POST" action="/data" name="user-order">
+        <fieldset>
+          <legend>Оформление заказа</legend>
+
+          <div class="input-group">
+            <label for="first-name">Имя</label>
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              placeholder="Введите Ваше имя"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="last-name">Фамилия</label>
+            <input
+              type="text"
+              id="last-name"
+              name="last-name"
+              placeholder="Введите Вашу фамилию"
+              minlength="2"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="user-email">Электронная почта</label>
+            <input
+              type="email"
+              id="user-email"
+              name="user-email"
+              placeholder="user@gmail.com"
+              minlength="2"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="user-phone">Номер телефона</label>
+            <input
+              type="phone"
+              id="user-phone"
+              name="user-phone"
+              placeholder="+375 12 345-67-89"
+              minlength="2"
+              pattern="^\+\d{1,3} \d{2} \d{3}-\d{2}-\d{2}$"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="coffee-type">Сорт кофе:</label>
+            <select id="coffee-type" name="coffee-type" required>
+              <option value="arabica">Арабика</option>
+              <option value="robusta">Робуста</option>
+              <option value="blend" selected>Бленд</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="quantity">Количество зерен (г):</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              value="42"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <span>Степень обжарки:</span>
+            <label>
+              <input type="radio" name="roast" value="light" checked /> Светлая
+            </label>
+            <label>
+              <input type="radio" name="roast" value="medium" /> Средняя
+            </label>
+            <label>
+              <input type="radio" name="roast" value="dark" /> Темная
+            </label>
+          </div>
+
+          <div class="input-group">
+            <label for="promo-code">Промокод:</label>
+            <input
+              type="password"
+              id="promo-code"
+              name="promo-code"
+              placeholder="****"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label for="comments">Пожелания:</label>
+            <textarea
+              id="comments"
+              name="comments"
+              placeholder="Оставьте Ваши пожелания здесь"
+              required
+            ></textarea>
+          </div>
+
+          <div class="input-group">
+            <label for="loyalty-system">Статус лояльности:</label>
+            <input
+              type="text"
+              id="loyalty-system"
+              name="loyalty-system"
+              value="Новый клиент"
+              disabled
+            />
+          </div>
+
+          <div class="input-group">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">Я согласен на обработку персональных данных</label>
+          </div>
+
+          <button type="submit">Оформить заказ</button>
+        </fieldset>
+      </form>
+    </section>
+  </body>
+</html>

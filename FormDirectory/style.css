@@ -1,0 +1,77 @@
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  font-family: "Courier New", Courier, monospace;
+  & form {
+    width: 100%;
+    max-width: 500px;
+    & fieldset {
+      border: 2px solid black;
+      padding: 20px;
+      border-radius: 8px;
+      & legend {
+        font-weight: bold;
+        padding: 0 10px;
+        text-align: center;
+        color: #56361f;
+      }
+      & .input-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        & input,
+        select,
+        textarea {
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          caret-color: #f9bea9;
+        }
+        & input:not([type="checkbox"]):not([type="radio"]):focus,
+        select:focus,
+        textarea:focus {
+          outline: 3px solid #56361f;
+          outline-offset: 2px;
+        }
+        & textarea {
+          resize: horizontal;
+          min-height: 80px;
+          max-width: 460px;
+        }
+        & input:disabled {
+          background-color: #eeeeee;
+          border: 1px dashed #999;
+          color: #777;
+          cursor: grab;
+        }
+        & input[type="checkbox"],
+        input[type="radio"] {
+          width: auto;
+          cursor: pointer;
+        }
+      }
+      & .input-group:has(input[type="checkbox"]) {
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+      }
+      & button {
+        width: 100%;
+        padding: 12px;
+        background-color: #f2ceb4;
+        color: #56361f;
+        border: none;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      & button:hover {
+        background-color: #56361f;
+        color: #f2ceb4;
+      }
+    }
+  }
+}
