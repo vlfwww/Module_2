@@ -1,3 +1,21 @@
+@font-face {
+  font-family: "Sen";
+  src: url("./assets/fonts/Sen-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+}
+
 .table-wrapper {
   margin: 50px auto;
   width: 600px;
