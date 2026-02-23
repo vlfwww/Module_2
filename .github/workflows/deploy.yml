@@ -1,0 +1,31 @@
+name: Multi-Branch Deploy
+
+on:
+  push:
+    branches:
+      - stage-1
+      - stage-2
+      - stage-3
+      - stage-4
+      - stage-5
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy Branch to Subfolder
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: .
+          target-folder: ${{ github.ref_name }}
+          branch: gh-pages
+          clean: false
