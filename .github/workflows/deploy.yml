@@ -9,6 +9,7 @@ on:
       - stage-4
       - stage-5
       - main
+  workflow_dispatch: 
 
 permissions:
   contents: write
@@ -25,7 +26,8 @@ jobs:
       - name: Deploy Branch to Subfolder
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .
+          folder: . 
           target-folder: ${{ github.ref_name }}
-          branch: gh-pages
-          clean: false
+          branch: gh-pages 
+          clean: false 
+          single-commit: false
