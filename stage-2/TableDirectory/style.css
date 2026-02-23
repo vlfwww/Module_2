@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "Sen";
+  src: url("./assets/fonts/Sen-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+}
+
+.table-wrapper {
+  margin: 50px auto;
+  width: 600px;
+  height: 400px;
+  overflow: auto;
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border: 2px solid black;
+    & caption {
+      font-size: 1.6em;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #3e2723;
+    }
+    & .first-column{
+        width: 160px;
+    }
+    & .second-column{
+        width: 150px;
+    }
+    & .third-colunm{
+        width: 300px;
+    }
+    & .fourth-column{
+        width: 100px;
+    }
+    & th,
+    td {
+      border: 1px solid black;
+      padding: 10px 20px;
+    }
+    & thead {
+      background-color: #5c453f;
+      color: white;
+      & th {
+        text-align: center;
+        font-style: italic;
+      }
+    }
+    & tbody {
+      background-color: #f6f1f1;
+      & th {
+        text-align: right;
+        font-weight: bold;
+        background-color: #f3ebe7;
+      }
+      & td {
+        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    & tfoot {
+      font-weight: bold;
+      font-style: italic;
+      background-color: #d7ccc8;
+    }
+    
+  }
+}
