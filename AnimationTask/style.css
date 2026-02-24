@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Sen";
+  src: url("./assets/fonts/Sen-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+  & .card-container {
+    perspective: 1000px;
+  }
+  & .card-wrapper {
+    color: #ffffff;
+    text-align: center;
+    padding: 35px;
+    width: 320px;
+    border-radius: 24px;
+    box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #374151, #111827);
+    animation: cardLoad 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    transform: scale(1) translateY(0) rotate(0deg) skewX(0deg);
+    transition:
+      transform 0.4s ease-in-out,
+      background 0.5s ease,
+      opacity 0.3s ease,
+      box-shadow 0.4s ease;
+    &:hover {
+      opacity: 0.9;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      transform: scale(1.1) translateY(-15px);
+      box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
+    }
+    &:active {
+      background: linear-gradient(135deg, #f58686, #a21c40);
+      transform: scale(0.95) translateY(-15px) rotate(10deg) skewX(-5deg);
+      transition: transform 0.2s ease-out;
+      box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
+    }
+    & figure {
+      margin: 0;
+      & img {
+        width: 100px;
+        height: auto;
+        margin: 0 auto;
+        transform: scale(0);
+        opacity: 0;
+        filter: brightness(0) invert(1);
+        animation: imageLoad 0.8s 1.5s forwards;
+      }
+    }
+    & h1 {
+      font-size: 1.6rem;
+    }
+    & p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.8;
+    }
+  }
+}
+
+@keyframes cardLoad {
+  0% {
+    opacity: 0;
+    transform: rotate(-10deg) translateY(100px);
+    background: linear-gradient(135deg, #969698, #3f3f46);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);
+    background: linear-gradient(135deg, #374151, #111827);
+  }
+}
+
+@keyframes imageLoad {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
