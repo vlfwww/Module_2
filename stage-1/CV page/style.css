@@ -74,7 +74,7 @@ header {
       &:hover {
         color: #ff4757;
         text-decoration: underline;
-        text-decoration-color: #93CDAC;
+        text-decoration-color: #93cdac;
       }
     }
   }
@@ -86,17 +86,29 @@ main {
   & section {
     margin: 40px 0;
     &#personal-information {
+      position: relative;
+      padding-left: 20px;
+      &::before {
+        content: "";
+        background-color: #ff4757;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+      }
+      & h2::first-letter {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #ff4757;
+      }
       & p {
         text-indent: 40px;
-        &::first-letter {
-          font-size: 2rem;
-          font-weight: 900;
-          color: #ff4757;
-        }
       }
     }
     &#work-experience {
-      & .job-list, .duty-list {
+      & .job-list,
+      .duty-list {
         list-style-type: none;
       }
       & .job-list {
@@ -120,7 +132,7 @@ main {
             text-transform: lowercase;
             &::before {
               content: "➤";
-              color: #93CDAC;
+              color: #93cdac;
               font-weight: bold;
               padding-right: 10px;
             }
