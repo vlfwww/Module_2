@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "Sen";
+  src: url("./assets/fonts/Sen-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  & .menu-toggle-input,
+  .burger-menu {
+    display: none;
+  }
+  & a {
+    text-decoration: none;
+    color: #000;
+  }
+  & .company-logo {
+    text-align: center;
+    & img {
+      width: 4em;
+      height: 4em;
+    }
+  }
+  & .navigation-links {
+    display: flex;
+    gap: 2rem;
+    & a:hover {
+      text-decoration: underline;
+    }
+  }
+  & .avatar-icon img {
+    width: 2em;
+    height: 2em;
+  }
+  @media (max-width: 760px) {
+    & header {
+      padding: 10px;
+    }
+    & .company-logo figcaption {
+      display: none;
+    }
+    & .burger-menu {
+      display: block;
+      order: 3;
+      & img {
+        width: 3em;
+        height: 3em;
+      }
+    }
+    & .avatar-icon {
+      order: 2;
+      margin-left: auto;
+      margin-right: 15px;
+    }
+    & .navigation-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+      box-shadow: 0 4px 9px rgba(0, 0, 0, 0.1);
+      gap: 15px;
+      text-align: center;
+      & a {
+        border: 1px solid rgb(84, 82, 82);
+        border-radius: 5px;
+        padding: 5px;
+      }
+    }
+    & .menu-toggle-input:checked ~ .navigation-links {
+      display: flex;
+    }
+  }
+  @media (max-width: 480px) {
+    header {
+      padding: 0 8px;
+    }
+    .company-logo img {
+      width: 3rem;
+      height: 3rem;
+    }
+    .burger-menu img,
+    .avatar-icon img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    .navigation-links {
+      gap: 5px;
+      padding: 7px;
+      & a {
+        font-size: 13px;
+      }
+    }
+  }
+}
