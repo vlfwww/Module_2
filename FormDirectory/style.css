@@ -46,9 +46,7 @@ body {
           border-radius: 4px;
           caret-color: #f9bea9;
         }
-        & input:not([type="checkbox"]):not([type="radio"]):focus,
-        select:focus,
-        textarea:focus {
+        & :focus {
           outline: 3px solid #56361f;
           outline-offset: 2px;
         }
@@ -61,7 +59,7 @@ body {
           background-color: #eeeeee;
           border: 1px dashed #999;
           color: #777;
-          cursor: grab;
+          cursor: not-allowed;
         }
         & input[type="checkbox"],
         input[type="radio"] {

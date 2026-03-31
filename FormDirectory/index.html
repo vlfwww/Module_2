@@ -8,7 +8,7 @@
   </head>
   <body>
     <section class="form-wrapper">
-      <form action="#" method="POST" action="/data" name="user-order">
+      <form action="/data" method="POST" name="user-order">
         <fieldset>
           <legend>Оформление заказа</legend>
 
@@ -44,7 +44,7 @@
               name="user-email"
               placeholder="user@gmail.com"
               minlength="2"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               required
             />
           </div>
@@ -52,7 +52,7 @@
           <div class="input-group">
             <label for="user-phone">Номер телефона</label>
             <input
-              type="phone"
+              type="tel"
               id="user-phone"
               name="user-phone"
               placeholder="+375 12 345-67-89"
