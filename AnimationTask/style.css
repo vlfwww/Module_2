@@ -40,12 +40,13 @@ main {
     cursor: pointer;
     background: linear-gradient(135deg, #374151, #111827);
     animation: cardLoad 2s cubic-bezier(0.2, 0.8, 0.2, 1);
-    transform: scale(1) translateY(0) rotate(0deg) skewX(0deg);
+    transform: scale(1) translateY(0) rotate(0deg) rotateX(0deg) rotateY(0deg); 
     transition:
       transform 0.4s ease-in-out,
       background 0.5s ease,
       opacity 0.3s ease,
       box-shadow 0.4s ease;
+    transform-style: preserve-3d;  
     &:hover {
       opacity: 0.9;
       background: linear-gradient(135deg, #6366f1, #a855f7);
@@ -54,29 +55,33 @@ main {
     }
     &:active {
       background: linear-gradient(135deg, #f58686, #a21c40);
-      transform: scale(0.95) translateY(-15px) rotate(10deg) skewX(-5deg);
+      transform: scale(0.95) rotateX(15deg) rotateY(-10deg);
       transition: transform 0.2s ease-out;
       box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
     }
     & figure {
       margin: 0;
+      width: 100%;
       & img {
-        width: 100px;
+        width: 100%;
+        max-width: 150px;
         height: auto;
         margin: 0 auto;
         transform: scale(0);
         opacity: 0;
         filter: brightness(0) invert(1);
-        animation: imageLoad 0.8s 1.5s forwards;
+        animation: imageLoad 0.8s 2s forwards;
       }
-    }
-    & h1 {
-      font-size: 1.6rem;
-    }
-    & p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      opacity: 0.8;
+      & figcaption{
+        & h1 {
+        font-size: 1.6rem;
+        }
+        & p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          opacity: 0.8;
+        }
+      }
     }
   }
 }
