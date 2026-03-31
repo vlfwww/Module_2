@@ -52,7 +52,7 @@ header {
     height: 2em;
   }
   @media (max-width: 760px) {
-    & header {
+    & {
       padding: 10px;
     }
     & .company-logo figcaption {
@@ -93,7 +93,7 @@ header {
     }
   }
   @media (max-width: 480px) {
-    header {
+    & {
       padding: 0 8px;
     }
     .company-logo img {
