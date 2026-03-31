@@ -75,6 +75,7 @@ header {
         color: #ff4757;
         text-decoration: underline;
         text-decoration-color: #93cdac;
+        transition: color 0.3s ease;
       }
     }
   }
@@ -154,19 +155,25 @@ main {
         justify-content: center;
         gap: 30px;
         margin-top: 20px;
-        & a {
+        & a.contact-link {
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 8px;
           text-decoration: none;
-          color: inherit;
-          & img {
+          color: #34535c; 
+          transition: color 0.3s ease;
+          & svg {
             width: 40px;
             height: 40px;
-            filter: brightness(0);
-            &:hover {
-              filter: invert(30%) sepia(90%) saturate(1000%) hue-rotate(250deg);
+            fill: currentColor; 
+            transition: fill 0.3s ease;
+          }
+          &:hover {
+            color: #ff4757; 
+            & span {
+              text-decoration: underline;
+              text-decoration-color: #93cdac;
             }
           }
         }
