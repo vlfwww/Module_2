@@ -39,10 +39,11 @@ body {
   & main {
     display: grid;
     gap: 20px;
-    grid-template-columns: minmax(200px, 400px) 1fr;
+    grid-template-columns: minmax(140px, 400px) 1fr;
     & aside {
       background-color: #cb7ac8;
       max-height: 50%;
+      align-self: start;
       padding: 15px;
       border-radius: 10px;
       overflow-y: auto;
